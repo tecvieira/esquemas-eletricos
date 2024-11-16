@@ -65,7 +65,7 @@ a{
 }
 
 footer{   
-    padding-top: 5px;
+    padding-top: 1px;
     text-align: center;
-    color: darkgray;
+    color:darkred;
 }
