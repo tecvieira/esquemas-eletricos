@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* estilos de euro 5*/
+*{
+    padding: 0px;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html body{
+    background-image: url(../imagens/pexels-jeshoots-1000.jpg);
+    width:600px;
+    height: 100vh;
+    background-size: cover;   
+}
+ul{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+   
+}
+li{
+    list-style-type: none;
+}
+nav a{
+    color: darkgray;
+    text-decoration: none;
+}
+nav a:hover{
+    color: chartreuse;
+}
+
+table{
+    color: darkgray;
+    width: 500px;
+    border-collapse: collapse;
+    position: relative;
+    margin: auto;
+}
+
+td{
+    border: 1px solid white;
+    text-align: left;
+
+}
+#cabecalho{
+    color: lime;
+    text-align: center;
+    
+}
+
+a{
+    color: rgb(37, 173, 173);
+}
+
+ a:hover{
+    color: rgb(223, 135, 135);
+}
+
+footer{
+    padding: 80px;
+    text-align: center;
+    color: darkgray;
+}
