@@ -8,17 +8,21 @@
 
 html body{
     background-image: url(../imagens/pexels-jeshoots-1000.jpg);
-    width:600px;
+    max-width: 400px;
     height: 100vh;
-    background-size: cover;   
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 10px;
+   
+
 }
 ul{
     font-size: 1.5em;
     display: flex;
     justify-content: space-between;
     align-items: left;
-    padding: 20px;
-   
+    padding: 10px;
+    
 }
 li{
     list-style-type: none;
@@ -33,15 +37,17 @@ nav a:hover{
 
 table{
     color: darkgray;
-    width: 500px;
+    width: 400px;
     border-collapse: collapse;
     position: relative;
     margin: auto;
+   
 }
 
 td{
     border: 1px solid white;
     text-align: left;
+    padding: 3px;
 
 }
 #cabecalho{
@@ -59,7 +65,7 @@ a{
 }
 
 footer{
-    padding: 80px;
+    padding: 2px;
     text-align: center;
     color: darkgray;
 }
