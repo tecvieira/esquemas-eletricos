@@ -35,6 +35,10 @@ section{
     padding-top: 50px;
 }
 
+#qrcode{
+    padding-top: 20px;
+}
+
 section a{
     color: darkgrey;
     text-decoration: none;
@@ -44,7 +48,7 @@ section a:hover{
     color: red;
 }
 footer{
-    padding:80px;
+    padding:20px;
     text-align: center;
     color: darkgray;
 }

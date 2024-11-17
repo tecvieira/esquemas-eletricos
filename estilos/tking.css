@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* estilos de ThermoKing */
+
+*{
+    padding: 0px;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkgray;
+   
+}
+
+html body{
+    background-image: url(../imagens/pexels-jeshoots-1000.jpg);
+    max-width: 400px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding-left: 5px;  
+}
+ul{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+   
+}
+li{
+    list-style-type: none;
+}
+main{
+    padding: 10px;
+}
