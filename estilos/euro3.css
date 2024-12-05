@@ -9,11 +9,12 @@
 
 html body{
     background-image: url(../imagens/pexels-jeshoots-1000.jpg);
-    max-width: 400px;
+    max-width: 350px;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover; 
-    padding-left: 4px;  
+    padding-left: 4px;
+    margin: auto;  
 }
 ul{
     font-size: 1.5em;
@@ -36,7 +37,7 @@ nav a:hover{
 
 table{
     color: darkgray;
-    width: 400px;
+    width: 350px;
     border-collapse: collapse;
     position: relative;
     margin: auto;
