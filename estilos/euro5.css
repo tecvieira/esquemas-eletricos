@@ -7,12 +7,13 @@
 }
 
 html body{
-    background-image: url(../imagens/pexels-jeshoots-1000.jpg);
+    background-color: black;
     max-width: 400px;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     padding-left: 4px;
+    margin: auto;
    
 
 }
@@ -65,7 +66,7 @@ a{
 }
 
 footer{   
-    padding-top: 1px;
+   padding: 20px;
     text-align: center;
     color:darkred;
 }
