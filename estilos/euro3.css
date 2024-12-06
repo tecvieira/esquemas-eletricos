@@ -34,6 +34,9 @@ nav a{
 nav a:hover{
     color: chartreuse;
 }
+aside > h1{
+    color: darkgrey;
+}
 
 table{
     color: darkgray;
@@ -41,6 +44,10 @@ table{
     border-collapse: collapse;
     position: relative;
     margin: auto;
+    
+}
+table > h1{
+    color: darkgray;
     
 }
 

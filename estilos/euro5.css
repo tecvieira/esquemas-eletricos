@@ -36,6 +36,10 @@ nav a:hover{
     color: chartreuse;
 }
 
+aside > h1{
+    color: darkgray;
+}
+
 table{
     color: darkgray;
     width: 400px;
