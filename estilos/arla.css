@@ -7,7 +7,7 @@
 }
 
 html body{
-    background-image: url(../imagens/pexels-pixabay-531767.jpg);
+    background-image: linear-gradient(to top, rgb(54, 54, 54), black);
     max-width: 350px;
     height: 100vh;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@ nav a:hover{
 }
 
 table{
-    color: rgb(21, 13, 97);
+    color: rgb(19, 130, 145);
     width: 350px;
     border-collapse: collapse;
     position: relative;
