@@ -8,8 +8,7 @@
 
 html body{
     background-image: linear-gradient(to top, rgb(54, 54, 54), black);
-    max-width: 400px;
-    height: 100vh;
+    max-width: 350px;    
     background-repeat: no-repeat;
     background-size: cover;
     padding-left: 4px;
@@ -42,7 +41,7 @@ aside > h1{
 
 table{
     color: darkgray;
-    width: 400px;
+    width: 350px;
     border-collapse: collapse;
     position: relative;
     margin: auto;
