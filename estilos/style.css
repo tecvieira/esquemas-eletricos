@@ -14,6 +14,13 @@ html body{
     background-size: cover;   
 }
 
+#resultado{
+    background-color: yellowgreen;
+    color: darkred;
+    width: 100vw;
+    text-align: center;
+}
+
 div{
     text-align: center; 
 }
