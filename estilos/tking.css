@@ -8,15 +8,12 @@
 }
 
 html body{
-    background-image: linear-gradient(to top, rgb(54, 54, 54), black);
+    background-color: black;
     max-width: 350px;
     height: 100vh;
-    background-repeat: no-repeat;
     background-size: cover; 
     padding-left: 4px;
-    margin: auto;
-   
-      
+    margin: auto;    
 }
 ul{
     font-size: 1.5em;
@@ -28,6 +25,11 @@ ul{
 }
 li{
     list-style-type: none;
+}
+nav h1{
+    color: rgb(19, 130, 145) ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
 }
 nav a{
     color: rgb(233, 229, 27);
@@ -62,8 +64,6 @@ td a:hover{
 #cabecalho{
     color: rgb(233, 229, 27);
 }
-
-
 
 footer{
     padding: 30px;
