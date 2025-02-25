@@ -7,7 +7,7 @@
 }
 
 html body{
-    background-image: linear-gradient(to top, rgb(54, 54, 54), black);
+    background-color: black;
     max-width: 350px;
     height: 100vh;
     background-repeat: no-repeat;
