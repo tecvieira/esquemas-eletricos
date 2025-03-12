@@ -30,7 +30,7 @@ header > h1{
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.658);
     
 }
 
@@ -81,6 +81,16 @@ main > p{
 
 footer{
     text-align: center;
-    color: red;
+    color:  black;
     padding-bottom: 20px;
+    
+}
+footer > p > a{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: red;
+}
+
+footer > p > a:hover{
+    color: darkgreen;
 }
