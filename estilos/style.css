@@ -61,6 +61,7 @@ nav > a:hover{
 
 main{
     background-color: white;
+   
     margin: 25px;
     padding: 10px;
     border-radius: 10px;
@@ -81,4 +82,5 @@ main > p{
 footer{
     text-align: center;
     color: red;
+    padding-bottom: 20px;
 }
