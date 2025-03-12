@@ -53,6 +53,10 @@ header > nav > a{
     font-weight: bold;
 }
 
+header > nav > a > abbr{
+    text-decoration: none;
+}
+
 nav > a:hover{
     background-color: rgb(194, 120, 10);
     color: white;
