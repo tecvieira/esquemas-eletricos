@@ -58,7 +58,7 @@ header > nav > a > abbr{
 }
 
 nav > a:hover{
-    background-color: rgb(194, 120, 10);
+    background-color: rgb(24, 201, 1);
     color: white;
     transition: background-color .5s;
 }
