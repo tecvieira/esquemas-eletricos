@@ -26,7 +26,7 @@ header{
 header > h1{
    
     background-color: #D0D0D7;
-    color: rgb(194, 120, 10);
+    color: #c2780a;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
@@ -47,7 +47,7 @@ header > nav > a{
     margin: 5px;
     text-decoration: none;
     text-align: center;
-    background-color: #8b8b94;
+    background-color: #c2780a;
     color:rgb(0, 0, 0);
     border-radius: 5px;
     font-weight: bold;
@@ -65,7 +65,6 @@ nav > a:hover{
 
 main{
     background-color: white;
-   
     margin: 25px;
     padding: 10px;
     border-radius: 10px;
@@ -81,6 +80,10 @@ main > p{
 #qr_code{
     padding-top: 20px;
     text-align: center;
+}
+#qr_code > h3{
+    color: red;
+   padding: 15px 0px 20px 0px;  
 }
 
 footer{
