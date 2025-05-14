@@ -26,7 +26,7 @@ header{
 header > h1{
    
     background-color: #D0D0D7;
-    color: #c2780a;
+    color: #2853c9;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
@@ -47,8 +47,8 @@ header > nav > a{
     margin: 5px;
     text-decoration: none;
     text-align: center;
-    background-color: #c2780a;
-    color:rgb(0, 0, 0);
+    background-color: #2853c9;
+    color:rgb(254, 253, 253);
     border-radius: 5px;
     font-weight: bold;
 }

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecVander - Entendendo a Eletricidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+        }
+        .content-card h2 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .content-card ul li {
+            background-color: #e0f2fe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem; /* Aumentado para acomodar a calculadora */
+            margin-bottom: 1rem; /* Aumentado para espaçamento */
+            border-radius: 0.375rem;
+        }
+        .logo-container img {
+            max-height: 80px;
+        }
+        .logo-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 80px;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-weight: bold;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+        /* Estilos para as calculadoras */
+        .calculator {
+            margin-top: 0.75rem; /* 12px */
+            padding: 0.75rem; /* 12px */
+            background-color: #ffffff;
+            border: 1px solid #d1d5db; /* Borda cinza claro */
+            border-radius: 0.375rem; /* 6px */
+        }
+        .calculator label {
+            display: block;
+            margin-bottom: 0.25rem; /* 4px */
+            font-weight: 600; /* semibold */
+            color: #374151; /* gray-700 */
+        }
+        .calculator input[type="number"] {
+            width: 100%;
+            padding: 0.5rem; /* 8px */
+            border: 1px solid #9ca3af; /* gray-400 */
+            border-radius: 0.25rem; /* 4px */
+            margin-bottom: 0.5rem; /* 8px */
+            box-sizing: border-box;
+        }
+        .calculator button {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            padding: 0.5rem 1rem; /* 8px 16px */
+            border-radius: 0.25rem; /* 4px */
+            font-weight: 600; /* semibold */
+            transition: background-color 0.2s;
+        }
+        .calculator button:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+
+       
+        .calculator .result {
+            margin-top: 0.75rem; /* 12px */
+            font-weight: 600; /* semibold */
+            color: #1e3a8a; /* Azul escuro personalizado */
+        }
+
+         #despedida_final{
+            display: flex;
+            justify-content:space-around;
+            
+        }
+
+        div > #butVoltar{
+            color: rgb(0, 8, 255);
+            background-color: yellowgreen;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 20px;
+
+            
+        }
+
+        div > #butSair{
+            color: rgb(5, 5, 5);
+            background-color: red;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-8 shadow-lg">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="logo-container mb-4 md:mb-0 flex items-center">
+                <img src="imagens/logo-tecvandeRec.png"
+                     alt="Logotipo TecVander"
+                     class="rounded-md"
+                     onerror="this.style.display='none'; document.getElementById('logo-fallback-header').style.display='flex';">
+                <div id="logo-fallback-header" class="logo-fallback" style="display:none;">TecVander Logo</div>
+                <h1 class="text-4xl font-bold ml-4">Conhecer é evoluir.</h1>
+            </div>
+            <h2 class="text-2xl font-semibold text-center md:text-right">Entendendo a Eletricidade</h2>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="o-que-e" class="content-card">
+            <h2 class="text-3xl font-semibold">O que é Eletricidade?</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                A eletricidade é uma forma de energia resultante da existência de cargas elétricas (como elétrons e prótons), seja estaticamente como um acúmulo de carga ou dinamicamente como uma corrente. É o fluxo de elétrons através de um material condutor, como um fio de cobre.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Ela está presente em quase todos os aspectos da nossa vida moderna, alimentando nossas casas, indústrias e tecnologias, tornando-se uma força invisível, porém indispensável.
+            </p>
+        </section>
+
+        <section id="conceitos" class="content-card">
+            <h2 class="text-3xl font-semibold">Conceitos Fundamentais e Calculadoras</h2>
+            <p class="mb-6 text-lg leading-relaxed">Para entender como a eletricidade funciona, precisamos conhecer alguns conceitos básicos. Utilize as calculadoras abaixo para explorar suas relações:</p>
+            <ul class="space-y-4">
+                <li>
+                    <strong class="text-blue-700 text-xl">Tensão Elétrica (Voltagem - V):</strong> Pense nela como a "pressão" ou "força" que empurra os elétrons através do condutor. É a diferença de potencial elétrico entre dois pontos. Quanto maior a tensão, maior a "força" que impulsiona a corrente. É medida em Volts (V).
+                    <div class="calculator">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-600">Calculadora de Tensão (V = I × R)</h4>
+                        <div>
+                            <label for="tensao_corrente">Corrente (I) em Amperes (A):</label>
+                            <input type="number" id="tensao_corrente" placeholder="Ex: 2">
+                        </div>
+                        <div>
+                            <label for="tensao_resistencia">Resistência (R) em Ohms (Ω):</label>
+                            <input type="number" id="tensao_resistencia" placeholder="Ex: 55">
+                        </div>
+                        <button onclick="calcularTensao()">Calcular Tensão</button>
+                        <p id="resultado_tensao" class="result"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-700 text-xl">Corrente Elétrica (Amperagem - A):</strong> É o fluxo real de elétrons passando por um ponto do condutor em um determinado intervalo de tempo. Imagine como a quantidade de água que passa por uma mangueira. É medida em Amperes (A).
+                    <div class="calculator">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-600">Calculadora de Corrente (I = V / R)</h4>
+                        <div>
+                            <label for="corrente_tensao">Tensão (V) em Volts (V):</label>
+                            <input type="number" id="corrente_tensao" placeholder="Ex: 110">
+                        </div>
+                        <div>
+                            <label for="corrente_resistencia">Resistência (R) em Ohms (Ω):</label>
+                            <input type="number" id="corrente_resistencia" placeholder="Ex: 55">
+                        </div>
+                        <button onclick="calcularCorrente()">Calcular Corrente</button>
+                        <p id="resultado_corrente" class="result"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-700 text-xl">Resistência Elétrica (R):</strong> É a oposição que um material oferece à passagem da corrente elétrica. Materiais diferentes têm resistências diferentes. Pense em como uma mangueira mais estreita dificulta a passagem da água. É medida em Ohms ($\Omega$).
+                    <div class="calculator">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-600">Calculadora de Resistência (R = V / I)</h4>
+                        <div>
+                            <label for="resistencia_tensao">Tensão (V) em Volts (V):</label>
+                            <input type="number" id="resistencia_tensao" placeholder="Ex: 110">
+                        </div>
+                        <div>
+                            <label for="resistencia_corrente">Corrente (I) em Amperes (A):</label>
+                            <input type="number" id="resistencia_corrente" placeholder="Ex: 2">
+                        </div>
+                        <button onclick="calcularResistencia()">Calcular Resistência</button>
+                        <p id="resultado_resistencia" class="result"></p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-700 text-xl">Potência Elétrica (W):</strong> Representa a taxa na qual a energia elétrica é convertida em outra forma de energia (luz, calor, movimento). É o "trabalho" que a eletricidade realiza. Calculada como Tensão x Corrente ($P = V \times I$). É medida em Watts (W).
+                    <div class="calculator">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-600">Calculadora de Potência (P = V × I)</h4>
+                        <div>
+                            <label for="potencia_tensao">Tensão (V) em Volts (V):</label>
+                            <input type="number" id="potencia_tensao" placeholder="Ex: 110">
+                        </div>
+                        <div>
+                            <label for="potencia_corrente">Corrente (I) em Amperes (A):</label>
+                            <input type="number" id="potencia_corrente" placeholder="Ex: 2">
+                        </div>
+                        <button onclick="calcularPotencia()">Calcular Potência</button>
+                        <p id="resultado_potencia" class="result"></p>
+                    </div>
+                </li>
+            </ul>
+            <p class="mt-6 text-lg leading-relaxed">
+                Estes conceitos estão intrinsecamente relacionados pela Lei de Ohm, uma das leis fundamentais da eletricidade: $V = R \times I$ (Tensão é igual a Resistência vezes Corrente).
+            </p>
+        </section>
+
+        <section id="importancia" class="content-card">
+            <h2 class="text-3xl font-semibold">Importância no Dia a Dia</h2>
+            <p class="text-lg leading-relaxed">
+                Desde acender uma lâmpada, carregar seu celular, assistir televisão, usar o computador, até o funcionamento de hospitais e grandes indústrias, a eletricidade é essencial. Ela revolucionou a forma como vivemos, trabalhamos, nos comunicamos e nos divertimos, sendo a espinha dorsal da sociedade tecnológica atual.
+            </p>
+        </section>
+
+        <section id="seguranca" class="content-card">
+            <h2 class="text-3xl font-semibold">Segurança Elétrica: Uma Prioridade</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                A eletricidade é poderosa e útil, mas também pode ser perigosa se não for manuseada com o devido respeito e conhecimento. É fundamental ter cuidado ao lidar com instalações e aparelhos elétricos.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+                <li>Nunca toque em fios desencapados ou danificados.</li>
+                <li>Não sobrecarregue tomadas utilizando múltiplos adaptadores ("benjamins" ou "Tês") de forma excessiva.</li>
+                <li>Evite o contato de aparelhos elétricos com água.</li>
+                <li>Sempre chame um eletricista qualificado para reparos e instalações elétricas complexas.</li>
+                <li>Utilize dispositivos de proteção, como disjuntores e DRs (Diferencial Residual).</li>
+            </ul>
+            <p class="mt-4 text-lg leading-relaxed font-semibold text-red-600">
+                Lembre-se: a segurança vem sempre em primeiro lugar!
+            </p>
+        </section>
+        
+            <div id="despedida_final">
+                <a href="index.html" id="butVoltar">
+                    <p>Voltar</p>
+                </a>
+                <a href="sair.html" id="butSair">
+                    <p>Sair</p>
+                </a>
+            </div>
+        
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <img src="imagens/logo-tecvandeRec.png"
+                     alt="Logotipo TecVander Rodapé"
+                     class="mx-auto rounded-md"
+                     style="max-height: 60px;"
+                     onerror="this.style.display='none'; document.getElementById('logo-fallback-footer').style.display='flex';">
+                <div id="logo-fallback-footer" class="logo-fallback mx-auto" style="display:none; height: 60px; width: 120px;">TecVander</div>
+            </div>
+            <p>&copy; <span id="currentYear"></span> TecVander. Todos os direitos reservados.</p>
+            <p class="text-sm">Conteúdo informativo sobre eletricidade. Consulte sempre um profissional qualificado.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para definir o ano atual no rodapé
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Funções das Calculadoras
+
+        // Função genérica para obter valor e validar
+        function obterValorNumerico(id, nomeCampo) {
+            const valorStr = document.getElementById(id).value;
+            if (valorStr === "") {
+                alert(`Por favor, insira um valor para ${nomeCampo}.`);
+                return null;
+            }
+            const valorNum = parseFloat(valorStr);
+            if (isNaN(valorNum)) {
+                alert(`Valor inválido para ${nomeCampo}. Por favor, insira um número.`);
+                return null;
+            }
+            return valorNum;
+        }
+
+        // Calculadora de Tensão (V = I * R)
+        function calcularTensao() {
+            const corrente = obterValorNumerico('tensao_corrente', 'Corrente');
+            const resistencia = obterValorNumerico('tensao_resistencia', 'Resistência');
+            const resultadoEl = document.getElementById('resultado_tensao');
+
+            if (corrente !== null && resistencia !== null) {
+                if (resistencia === 0 && corrente !== 0) {
+                     resultadoEl.textContent = "Resultado: Resistência não pode ser zero se a corrente não for zero para um cálculo de tensão finito.";
+                     return;
+                }
+                const tensao = corrente * resistencia;
+                resultadoEl.textContent = `Resultado: Tensão (V) = ${tensao.toFixed(2)} V`;
+            } else {
+                resultadoEl.textContent = ""; // Limpa resultado se houver erro de input
+            }
+        }
+
+        // Calculadora de Corrente (I = V / R)
+        function calcularCorrente() {
+            const tensao = obterValorNumerico('corrente_tensao', 'Tensão');
+            const resistencia = obterValorNumerico('corrente_resistencia', 'Resistência');
+            const resultadoEl = document.getElementById('resultado_corrente');
+
+            if (tensao !== null && resistencia !== null) {
+                if (resistencia === 0) {
+                    resultadoEl.textContent = "Resultado: Resistência não pode ser zero para calcular a corrente (divisão por zero).";
+                    return;
+                }
+                const corrente = tensao / resistencia;
+                resultadoEl.textContent = `Resultado: Corrente (I) = ${corrente.toFixed(2)} A`;
+            } else {
+                resultadoEl.textContent = "";
+            }
+        }
+
+        // Calculadora de Resistência (R = V / I)
+        function calcularResistencia() {
+            const tensao = obterValorNumerico('resistencia_tensao', 'Tensão');
+            const corrente = obterValorNumerico('resistencia_corrente', 'Corrente');
+            const resultadoEl = document.getElementById('resultado_resistencia');
+
+            if (tensao !== null && corrente !== null) {
+                if (corrente === 0) {
+                    resultadoEl.textContent = "Resultado: Corrente não pode ser zero para calcular a resistência (divisão por zero).";
+                    return;
+                }
+                const resistencia = tensao / corrente;
+                resultadoEl.textContent = `Resultado: Resistência (R) = ${resistencia.toFixed(2)} Ω`;
+            } else {
+                resultadoEl.textContent = "";
+            }
+        }
+
+        // Calculadora de Potência (P = V * I)
+        function calcularPotencia() {
+            const tensao = obterValorNumerico('potencia_tensao', 'Tensão');
+            const corrente = obterValorNumerico('potencia_corrente', 'Corrente');
+            const resultadoEl = document.getElementById('resultado_potencia');
+
+            if (tensao !== null && corrente !== null) {
+                const potencia = tensao * corrente;
+                resultadoEl.textContent = `Resultado: Potência (P) = ${potencia.toFixed(2)} W`;
+            } else {
+                resultadoEl.textContent = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
