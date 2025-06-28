@@ -77,6 +77,12 @@ main > p{
     padding-top: 10px;
 }
 
+h3{
+    padding-top: 10px;
+    font-style: italic;
+    color: #2853c9;
+}
+
 #qr_code{
     padding-top: 20px;
     text-align: center;
