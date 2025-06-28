@@ -30,16 +30,13 @@ header > h1{
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.658);
-    
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.658);   
 }
 
 header > nav{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-
-
 }
 
 header > nav > a{
@@ -68,8 +65,7 @@ main{
     margin: 25px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.39);
-   
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.39); 
 }
 
 main > p{
@@ -84,7 +80,7 @@ h3{
 }
 
 #videos{
-    background-color: rgb(13, 131, 19);
+    background-color: #2853c9;
     padding: 2px;
     border-radius: 5px;
     color: white;
@@ -96,6 +92,7 @@ h3{
     text-align: center;
     
 }
+
 #qr_code > h3{
     color: red;
    padding: 15px 0px 20px 0px;  
@@ -104,9 +101,9 @@ h3{
 footer{
     text-align: center;
     color:  black;
-    padding-bottom: 20px;
-    
+    padding-bottom: 20px;   
 }
+
 footer > p > a{
     font-size: 1.2em;
     text-decoration: none;
