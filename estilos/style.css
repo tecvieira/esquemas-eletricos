@@ -60,6 +60,22 @@ nav > a:hover{
     transition: background-color .5s;
 }
 
+button{
+    background-color:#2853c9;
+    color: white;
+    font-weight: bold;
+    padding:10px;
+    border-radius: 8px;
+    margin: 2px;
+    
+}
+
+button > a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 main{
     background-color: white;
     margin: 25px;

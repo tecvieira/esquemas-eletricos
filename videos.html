@@ -10,10 +10,12 @@
     <header>
         <h1>TecVander</h1>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#">contato</a>
-            <a href="sair.html">Sair</a>
+            <button ><a href="index.html">Inicio</a></button>
+           
+            <button><a href="sair.html">Sair</a></button>
+            <button onclick="escrevaEmail()">Contatos</button>
         </nav>
+         
     </header>
     <main>
         <h2>Conteúdo em vídeos técnico.</h2>
@@ -57,5 +59,10 @@
             Powered by TecVander
         </p>
     </footer>
+    <script>
+        function escrevaEmail(){
+            window.alert('tecvander.vieira@gmail.com     '+ '/watzap(21)98602-8335')
+        }
+    </script>
 </body>
 </html>
