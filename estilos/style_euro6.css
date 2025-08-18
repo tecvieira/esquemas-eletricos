@@ -38,6 +38,7 @@ header > nav{
     flex-flow: row wrap;
     justify-content: flex-end;
     padding: 5px;
+    
 }
 
 header > nav > a{
