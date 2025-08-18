@@ -23,8 +23,14 @@ header{
     align-items: center;
 }
 
-body> h1{
-    padding: 0px 10px;
+header > h1{
+   
+    background-color: #D0D0D7;
+    color: #2853c9;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.658);   
 }
 
 header > nav{
