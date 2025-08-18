@@ -101,6 +101,10 @@ h3{
     color: #2853c9;
 }
 
+div{
+    display: flex;
+    justify-content: center;
+}
 
 
 #qr_code{
