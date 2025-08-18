@@ -24,7 +24,6 @@ header{
 }
 
 header > h1{
-   
     background-color: #D0D0D7;
     color: #2853c9;
     padding: 10px;
@@ -99,7 +98,7 @@ ul{
     list-style-position: inside;
 }
 ol{
-     list-style-position: inside;
+    list-style-position: inside;
 }
 
 h3{
