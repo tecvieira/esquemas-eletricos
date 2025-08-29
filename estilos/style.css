@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #D0D0D7;
+    background-color: #b0aed8;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     width: 100vw;
@@ -15,7 +15,7 @@ body{
 
 header{
     display: flex;
-    background-color: #000000;
+    background-color: #010326;
     padding: 10px;
     color: white;
     flex-flow: row wrap;
@@ -24,8 +24,8 @@ header{
 }
 
 header > h1{
-    background-color: #D0D0D7;
-    color: #2853c9;
+    background-color: #b0aed8;
+    color: #032CA6;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
