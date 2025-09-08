@@ -21,6 +21,7 @@ header{
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 header > h1{
@@ -77,7 +78,8 @@ button > a{
 
 main{
     background-color: white;
-    margin: 25px;
+    max-width: 1000px;
+    margin: auto;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.39); 
@@ -110,7 +112,7 @@ h3{
 
 #qr_code > h3{
     color: red;
-   padding: 15px 0px 20px 0px;  
+    padding: 15px 0px 20px 0px;  
 }
 
 footer{
