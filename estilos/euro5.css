@@ -4,6 +4,7 @@
     padding: 0px;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 html body{
@@ -42,6 +43,11 @@ nav a:hover{
     color: chartreuse;
 }
 
+.marcopolo{
+    color: rgb(236, 230, 225);
+    text-align: center;
+}
+
 aside > h1{
     color: darkgray;
 }
@@ -52,31 +58,28 @@ table{
     border-collapse: collapse;
     position: relative;
     margin: auto;
-   
 }
 
 td{
     border: 1px solid white;
-    text-align: left;
+    text-align: center;
     padding: 1px;
-
 }
 #cabecalho{
     color: rgb(194, 120, 10);
     text-align: center;
-    
 }
 
 a{
     color: rgb(37, 173, 173);
 }
 
- a:hover{
+a:hover{
     color: rgb(194, 120, 10);
 }
 
 footer{   
-   padding: 10px;
+    padding: 10px;
     text-align: center;
     color: darkgray;
 }
