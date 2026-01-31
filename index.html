@@ -1,52 +1,292 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações técnicas</title>
+    <title>Informações técnicas - TecVander</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="estilos/mobile.css" media="screen and (max-width:580px)">
-</head>
-<body>
-    <header>
-        <!-- <h1>TecVander</h1> -->
-         <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander">
-        <nav>
-            <a href="thermo-king.html">Ar Condicionado</a>
-            <a href="arla32.html">SCR/ Arla32</a>
-            <a href="eletricidade.html">Eletricidade</a>
-            <a href="marcopolo-opcoes.html">Marcopolo</a>
-            <a href="euro3-opcoes.html">MBB-Euro 3</a>
-            <a href="euro5-opcoes.html">MBB-Euro 5</a>
-            <a href="index_euro6.html">MBB-Euro 6</a>
-            <a href="videos.html">Vídeos</a>
-    </header>
-    <main>
-        <h2>Informações e Esquemas elétricos</h2>
-        <p>
-            Seja bem vindo a está página!<br>
-            Com base nas necessidades mais procuradas por eletricistas e mecânicos em refrigeração,
-            resolvemos disponibilizar alguns dos esquemas elétricos e Informações técnicas, para ajudar
-            na solução de problemas encontrados no campo de trabalho destes profissionais.
-        </p>
-        <p>
-            Caso não encontre o que deseja deixe uma mensagem solicitando algo novo e quando estiver disponível entraremos em contato informando.
-        </p>
-        <div id="qr_code">
-            <h3>Compartilhe informações, use o QR code.</h3>
-            <img src="imagens/QRCode_100.png" alt="qr code site esquemas">
-        </div>
-        
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+        }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .navbar {
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(13, 110, 253, 0.2));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+            transform: scale(1.08);
+        }
+
+        .navbar-brand-text {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        nav.navbar-nav a.nav-link {
+            transition: all 0.3s ease;
+        }
+
+        nav.navbar-nav a.nav-link:hover {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .hero-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+        }
+
+        .hero-section h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .qr-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .qr-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .qr-card h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-card img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .container-fluid-app {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Animações suaves */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section,
+        .qr-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander" class="img-fluid">
+                    <span class="navbar-brand-text d-none d-md-inline">TecVander</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="thermo-king.html">
+                                <i class="bi bi-snow"></i> Ar Condicionado
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="arla32.html">
+                                <i class="bi bi-droplet"></i> SCR/Arla32
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eletricidade.html">
+                                <i class="bi bi-lightning"></i> Eletricidade
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="marcopolo-opcoes.html">
+                                <i class="bi bi-bus-front"></i> Marcopolo
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="euroDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-gear"></i> MBB
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="euroDropdown">
+                                <li><a class="dropdown-item" href="euro3-opcoes.html">Euro 3</a></li>
+                                <li><a class="dropdown-item" href="euro5-opcoes.html">Euro 5</a></li>
+                                <li><a class="dropdown-item" href="index_euro6.html">Euro 6</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="videos.html">
+                                <i class="bi bi-play-circle"></i> Vídeos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container-fluid-app">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="hero-section">
+                    <h2>
+                        <i class="bi bi-info-circle"></i> Informações e Esquemas Elétricos
+                    </h2>
+                    <p>
+                        Seja bem-vindo a esta página! Com base nas necessidades mais procuradas por
+                        <strong>eletricistas e mecânicos</strong> em refrigeração, resolvemos disponibilizar
+                        alguns dos esquemas elétricos e informações técnicas para ajudar na solução de
+                        problemas encontrados no campo de trabalho destes profissionais.
+                    </p>
+                    <hr class="my-4">
+                    <p>
+                        <i class="bi bi-chat-dots"></i> Caso não encontre o que deseja, deixe uma mensagem
+                        solicitando algo novo. Quando estiver disponível, entraremos em contato para informar.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="qr-card">
+                    <h3>
+                        <i class="bi bi-qr-code"></i> Compartilhe Informações
+                    </h3>
+                    <p class="text-muted mb-3">Use o QR code para compartilhar este site</p>
+                    <img src="imagens/QRCode_100.png" alt="qr code site esquemas" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>
-            Powered by TecVander
-        </p>
-        <p>
-            <a href="https://www.google.com/">Sair</a>
-        </p>
+        <div class="container-lg">
+            <p><i class="bi bi-rocket-takeoff"></i> Powered by <strong>TecVander</strong></p>
+            <p>
+                <a href="https://www.google.com/">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
+            </p>
+        </div>
     </footer>
-    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

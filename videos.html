@@ -1,85 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeos</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Vídeos Técnicos - TecVander</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .navbar {
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(13, 110, 253, 0.2));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+            transform: scale(1.08);
+        }
+
+        .navbar-brand-text {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        nav.navbar-nav a.nav-link {
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav.navbar-nav a.nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .page-title {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .page-title p {
+            color: #555;
+            margin: 1rem 0 0 0;
+            font-size: 1.1rem;
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-section h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid rgba(13, 110, 253, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .video-item {
+            background: #f0f4ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .video-item:hover {
+            background: #e7efff;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+        }
+
+        .video-item h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-item p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .video-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .video-link:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+        }
+
+        .credits {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 0.75rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .container-fluid-app {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title,
+        .video-section {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Navbar -->
     <header>
-        <!-- <h1>TecVander</h1> -->
-        <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander">
-        <nav>
-            <button ><a href="index.html">Inicio</a></button>
-
-            <button onclick="escrevaEmail()">Contatos</button>
-           
-            <button><a href="sair.html">Sair</a></button>
-            
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander" class="img-fluid">
+                    <span class="navbar-brand-text d-none d-md-inline">TecVander</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-house"></i> Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sair.html">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-         
     </header>
-    <main>
-        <h2>Conteúdo em vídeos técnico.</h2>
-        <p>
-            O conteúdo em vídeo visa facilitar o apredizado técnico com dicas práticas de colaboradores em diversas áreas da manutenção veícular.
-        </p>
-        <div>
-            <h3>Dicas Mercedez Benz Brasil:</h3><br>
-            
-            <p>
-                <strong>- Painel, navegação das funções</strong>, um ítem muito importante que auxilia o reparador, seja mecânico ou eletricista no dia a dia da manutenção ou operação do veículo. <a id="videos" href="https://www.youtube.com/watch?v=0vWrZYopinE" target="_blank" rel="external">Veja aqui.</a><br>
-                Créditos ao canal Cardiesel LTDA./youtube <br><br>
-            </p>
-            <p>
-                <strong>- Mercedes Benz Ônibus | OF1721 - Blue Tec 6,</strong>  chassi OF1721 é extremamente versátil e pode ser destinado a aplicações urbanas, intermunicipais, fretamentos e rodoviárias. Seu motor eletrônico traz economia e rentabilidade para o dia a dia, e o modelo também já atende à Proconve P8, uma norma equivalente à Euro 6.<a id="videos" href="https://www.youtube.com/watch?v=ceV55YdYCTw" target="_blank" rel="external">Veja aqui.</a><br>
-                Créditos ao canal Mercedez-Benz Brasil./ youtube<br><br>
-            </p>
-            <p>
-                <strong>- Regeneração dos Gases de Escape</strong><br> É um processo automático do veículo, que serve para limpar o Filtro de Partículas Diesel (DPF). Esse filtro, que parece uma colmeia, fica no sistema de escape e tem a função de capturar a fuligem (fumaça preta) gerada pela queima do diesel. Com o tempo e o uso, essa fuligem se acumula no DPF e pode entupir o filtro, causando perda de potência, aumento do consumo de combustível e até danos ao motor. A regeneração, então, entra em ação para queimar esse material particulado e limpar o filtro. <br>
-                Existem dois tipos de regeneração no Mercedes-Benz 1721 Euro 6 e outros modelos da marca. <br>
-                <strong>1. Regeneração Passiva</strong><br>
-                Esse tipo de regeneração acontece naturalmente durante a condução. Em condições normais de uso, principalmente em viagens longas e com o motor em temperaturas mais altas, a temperatura dos gases de escape já é suficiente para queimar a fuligem acumulada no DPF. O motorista não precisa fazer nada, pois esse processo ocorre de forma contínua e imperceptível. <br>
-                <strong>2. Regeneração Ativa</strong><br>
-                Quando a condução é em percursos curtos, no trânsito urbano ou com o motor em temperaturas mais baixas (o que é comum em caminhões de coleta de lixo, por exemplo), a regeneração passiva pode não ser suficiente para limpar o filtro.
 
-                Nesses casos, a central eletrônica do veículo inicia a regeneração ativa. Para isso, ela injeta um pouco de diesel no sistema de escape, antes do DPF. Esse diesel extra se inflama com a alta temperatura dos gases, elevando a temperatura do filtro para mais de 600°C, o que queima a fuligem de forma controlada.
-
-                Geralmente, o caminhão precisa estar em movimento para que a regeneração ativa ocorra, mas em alguns modelos, ela pode ser ativada manualmente pelo motorista (caso a luz de advertência no painel acenda) ou por um técnico, através de um equipamento de diagnóstico, se o filtro estiver muito entupido.
-
-                Em resumo, a regeneração é um processo essencial e, na maioria das vezes, automático, que garante que o sistema de emissões do seu caminhão funcione de forma eficiente, mantendo o meio ambiente mais limpo e o veículo com bom desempenho.
-                <a id="videos" href="https://www.youtube.com/watch?v=zuqqmI95Ons" target="_blank">veja aqui</a><br>
-                Vídeo - Canal do Steffens/ youtube
-            </p><br>
-            <p>
-                <strong>- Motor OM 471 o motor mais moderno e mais vendido do grupo Daimler,</strong> utilizado em veiculos euro-6. Sua tecnologia é pensada na otimização do consumo de combustível, freio motor é o melhor do mercado e mais eficiente no tratamento dos gazes. <a id="videos" href="https://www.youtube.com/watch?v=UeyWpDT9LjA" target="_blank" rel="external">Veja aqui.</a> <br>
-                Créditos ao canal Cardiesel LTDA./ youtube  
-            </p><br>
-            <p>
-                <strong>- Imobilizador de partida CODE </strong>Mercedez Benz, como testar e entender as causas. <a 
-                id="videos" href="https://www.youtube.com/watch?v=ukvrgdrL8gE" target="_blank" rel="external">Veja aqui.</a><br>
-                Créditos ao canal Perim Technology./youtube <br><br> 
-            </p>
+    <!-- Main Content -->
+    <main class="container-fluid-app">
+        <div class="page-title">
+            <h1><i class="bi bi-play-circle"></i> Conteúdo em Vídeos Técnicos</h1>
+            <p>O conteúdo em vídeo visa facilitar o aprendizado técnico com dicas práticas de colaboradores em diversas
+                áreas da manutenção veicular.</p>
         </div>
-        <div>
-            <h3>Alternadores e sistemas de carga:</h3><br>
-            <p>
-                <strong>- Reguladores de tensão em detalhes:</strong><br>
-                Conheça um pouco mais sobre os reguladores de tensão aplicados nos alternadores e dependendo da aplicação saiba como alterar a tensão de carga. <a id="videos" href="https://www.youtube.com/watch?v=N52X9AcsYk4" target="_blank" rel="external">Veja aqui.</a><br>
-                Créditos ao canal Aparecido Oliveira./ youtube<br><br> 
-            </p>
+
+        <!-- Mercedes Benz Section -->
+        <div class="video-section">
+            <h2><i class="bi bi-collection-play"></i> Dicas Mercedes Benz Brasil</h2>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Painel - Navegação das Funções</h4>
+                <p>Um item muito importante que auxilia o reparador, seja mecânico ou eletricista, no dia a dia da
+                    manutenção ou operação do veículo.</p>
+                <a href="https://www.youtube.com/watch?v=0vWrZYopinE" target="_blank" rel="external" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Créditos ao canal Cardiesel LTDA. / YouTube</div>
+            </div>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Mercedes Benz Ônibus - OF1721 Blue Tec 6</h4>
+                <p>O chassi OF1721 é extremamente versátil e pode ser destinado a aplicações urbanas, intermunicipais,
+                    fretamentos e rodoviárias. Seu motor eletrônico traz economia e rentabilidade para o dia a dia, e o
+                    modelo também atende à Proconve P8, uma norma equivalente à Euro 6.</p>
+                <a href="https://www.youtube.com/watch?v=ceV55YdYCTw" target="_blank" rel="external" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Créditos ao canal Mercedes-Benz Brasil / YouTube</div>
+            </div>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Regeneração dos Gases de Escape</h4>
+                <p>É um processo automático do veículo que serve para limpar o Filtro de Partículas Diesel (DPF).
+                    Existem dois tipos de regeneração no Mercedes-Benz 1721 Euro 6 e outros modelos da marca:
+                    <strong>Regeneração Passiva</strong> (acontece naturalmente durante a condução) e
+                    <strong>Regeneração Ativa</strong> (acionada quando em percursos curtos ou baixas temperaturas). A
+                    regeneração é um processo essencial que garante que o sistema de emissões funcione de forma
+                    eficiente.</p>
+                <a href="https://www.youtube.com/watch?v=zuqqmI95Ons" target="_blank" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Vídeo - Canal do Steffens / YouTube</div>
+            </div>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Motor OM 471 - Tecnologia Euro 6</h4>
+                <p>O motor mais moderno e mais vendido do grupo Daimler, utilizado em veículos Euro 6. Sua tecnologia é
+                    pensada na otimização do consumo de combustível, freio motor é o melhor do mercado e mais eficiente
+                    no tratamento dos gases.</p>
+                <a href="https://www.youtube.com/watch?v=UeyWpDT9LjA" target="_blank" rel="external" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Créditos ao canal Cardiesel LTDA. / YouTube</div>
+            </div>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Imobilizador de Partida CODE Mercedes Benz</h4>
+                <p>Como testar e entender as causas do imobilizador de partida CODE em veículos Mercedes Benz.</p>
+                <a href="https://www.youtube.com/watch?v=ukvrgdrL8gE" target="_blank" rel="external" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Créditos ao canal Perim Technology / YouTube</div>
+            </div>
+        </div>
+
+        <!-- Alternators Section -->
+        <div class="video-section">
+            <h2><i class="bi bi-lightning-charge"></i> Alternadores e Sistemas de Carga</h2>
+
+            <div class="video-item">
+                <h4><i class="bi bi-play-fill"></i> Reguladores de Tensão em Detalhes</h4>
+                <p>Conheça um pouco mais sobre os reguladores de tensão aplicados nos alternadores e, dependendo da
+                    aplicação, saiba como alterar a tensão de carga.</p>
+                <a href="https://www.youtube.com/watch?v=N52X9AcsYk4" target="_blank" rel="external" class="video-link">
+                    <i class="bi bi-youtube"></i> Assistir no YouTube
+                </a>
+                <div class="credits">Créditos ao canal Aparecido Oliveira / YouTube</div>
+            </div>
         </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>
-            Powered by TecVander
-        </p>
+        <div class="container-lg">
+            <p><i class="bi bi-rocket-takeoff"></i> Powered by <strong>TecVander</strong></p>
+        </div>
     </footer>
-    <script>
-        function escrevaEmail(){
-            window.alert('redentor.conect2020@gmail.com')
-        }
-    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -1,138 +1,399 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euro 5 opções</title>
-    <link rel="stylesheet" href="estilos/euro5.css">
+    <title>MBB Euro 5 - Esquemas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .navbar {
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(13, 110, 253, 0.2));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+            transform: scale(1.08);
+        }
+
+        .navbar-brand-text {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        nav.navbar-nav a.nav-link {
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav.navbar-nav a.nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .page-title {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+            margin-bottom: 2rem;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            color: white;
+        }
+
+        .table thead th {
+            font-weight: 600;
+            border: none;
+            padding: 1rem;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .table tbody td {
+            vertical-align: middle;
+            padding: 1rem;
+            border-color: #e9ecef;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f0f4ff;
+        }
+
+        .table a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .table a:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .container-fluid-app {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title,
+        .table-container {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <nav>
-            <!-- <h1>TecVander</h1> -->
-            <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander">
-            <ul>
-                <li><a href="index.html">Voltar</a></li>
-                <li><a href="sair.html">Sair</a></li>
-                <li><a href="index.html">Iníciar</a></li>
-            </ul>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander" class="img-fluid">
+                    <span class="navbar-brand-text d-none d-md-inline">TecVander</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-house"></i> Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sair.html">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-    </div>
-    <aside>
-        <h1>Euro V</h1>
-    </aside>
+    </header>
 
-    <table>
-        <tr>
-            <td id="cabecalho">Circuito</td>
-            <td id="cabecalho">OF 1519</td>
-            <td id="cabecalho">OF 1721</td>
-            <td id="cabecalho">OF 1722</td>
-            <td id="cabecalho">Apostilas</td>
-        </tr>
-        <tr>
-            <td>Diversos</td>
-            <td> para todos =></td>
-            <td> para todos =></td>
-            <td> para todos =></td>
-            <td><a href="apostilas/GUIA-DE-ELETRICA-MERCEDES.pdf">Guia de Eletrica Mercedez</a></td>
+    <!-- Main Content -->
+    <main class="container-fluid-app">
+        <div class="page-title">
+            <h1><i class="bi bi-gear"></i> Mercedes Benz Euro 5 - Esquemas Elétricos</h1>
+        </div>
 
-        </tr>
-        <tr>
-            <td>Abs</td>
-            <td><a href="esquemas/1519/ABS-1519.pdf">ABS-1519</a></td>
-            <td><a href="esquemas/1721/ABS-1721.pdf">ABS-1721</a></td>
-            <td><a href="esquemas/1722/ABS-1722.pdf">ABS-1722</a></td>
-        </tr>
-        <tr>
-            <td>Altern-Arranq</td>
-            <td><a href="esquemas/1519/ALTERN-ARRANQ-1519.pdf">Alt-Arrq- 1519</a></td>
-            <td><a href="esquemas/1721/ALT-ARR-1721.pdf">Alt-Arrq- 1721</a></td>
-            <td><a href="esquemas/1722/ALT-ARR-1722.pdf">Alt-Arrq- 1722</a></td>
-        </tr>
-        <tr>
-            <td>Buzina</td>
-            <td><a href="esquemas/1519/BUZINA-1519.pdf">Buzina-1519</a></td>
-            <td><a href="esquemas/1721/BUZINA-1721.pdf">Buzina-1721</a></td>
-            <td><a href="esquemas/1722/BUZINA-1722.pdf">Buzina-1722</a></td>
-        </tr>
-        <tr>
-            <td>Farol</td>
-            <td><a href="esquemas/1519/FAROIS-1519.pdf">Farol-1519</a></td>
-            <td><a href="esquemas/1721/FAROIS-1721.pdf">Farol-1721</a></td>
-            <td><a href="esquemas/1722/FAROL-1722.pdf">Farol-1722</a></td>
-        </tr>
-        <tr>
-            <td>FR/CPC</td>
-            <td><a href="esquemas/1519/FR-1519.pdf">FR/CPC-1519</a></td>
-            <td><a href="esquemas/1721/FR-CPC-1721.pdf">FR/CPC-1721</a></td>
-            <td><a href="esquemas/1722/FR-CPC-1722.pdf">FR/CPC-1722</a></td>
-        </tr>
-        <tr>
-            <td>Ignição</td>
-            <td><a href="esquemas/1519/IGNIÇÃO-PARTIDA-1519.pdf">Ignição-1519</a></td>
-            <td><a href="esquemas/1721/IGN-PARTIDA-1721.pdf">Ignição-1721</a></td>
-            <td><a href="esquemas/1722/IGN-PARTIDA-1722.pdf">Ignição-1722</a></td>
-        </tr>
-        <tr>
-            <td>Limpador</td>
-            <td><a href="esquemas/1519/LIMPADOR-1519.pdf">Limpador-1519</a></td>
-            <td><a href="esquemas/1721/LIMPADOR-1721.pdf">Limpador-1721</a></td>
-            <td><a href="esquemas/1722/LIMPADOR-1722.pdf">Limpador-1722</a></td>
-        </tr>
-        <tr>
-            <td>Linha CAN</td>
-            <td><a href="esquemas/1519/LINHA-CAN-1519.pdf">Can-1519</a></td>
-            <td><a href="esquemas/1721/CAN-1721.pdf">Can-1721</a></td>
-            <td><a href="esquemas/1722/CAN-1722.pdf">Can-1722</a></td>
-        </tr>
-        <tr>
-            <td>Luz de RÉ</td>
-            <td><a href="esquemas/1519/LUZ-DE- RE-1519.pdf">ré-1519</a></td>
-            <td><a href="esquemas/1721/LUZ-DE-RE-1721.pdf">ré-1721</a></td>
-            <td><a href="esquemas/1722/LUZ-DE-RE_1722.pdf">ré-1722</a></td>
-        </tr>
-        <tr>
-            <td>Luz de Freio</td>
-            <td><a href="esquemas/1519/LUZ-DE-FREIO-1519.pdf">freio-1519</a></td>
-            <td><a href="esquemas/1721/LUZ-FREIO-1721.pdf">freio-1721</a></td>
-            <td><a href="esquemas/1722/FREIO-1722.pdf">freio-1722</a></td>
-        </tr>
-        <tr>
-            <td>Luz de posição</td>
-            <td><a href="esquemas/1519/LUZ-DE-POSICAO-1519.pdf">posição-1519</a></td>
-            <td><a href="esquemas/1721/LUZ-POSIÇÃO-1721.pdf">posição-1721</a></td>
-            <td><a href="esquemas/1722/LUZ-POSIÇÃO-1722.pdf">posição-1722</a></td>
-        </tr>
-        <tr>
-            <td>MR</td>
-            <td><a href="esquemas/1519/MR-1519.pdf">MR-1519</a></td>
-            <td><a href="esquemas/1721/MR-1721.pdf">MR-1721</a></td>
-            <td><a href="esquemas/1722/MR-1722.pdf">MR-1722</a></td>
-        </tr>
-        <tr>
-            <td>Painel</td>
-            <td><a href="esquemas/1519/PAINEL-1519.pdf">Painel-1519</a></td>
-            <td><a href="esquemas/1721/PAINEL-1721.pdf">Painel-1721</a></td>
-            <td><a href="esquemas/1722/PAINEL-1722.pdf">Painel-1722</a></td>
-        </tr>
-        <tr>
-            <td>Seta/Alerta</td>
-            <td><a href="esquemas/1519/SETA-ALERTA-1519.pdf">SetAlert-1519</a></td>
-            <td><a href="esquemas/1721/SETA-ALERTA-1721.pdf">SetAlert-1721</a></td>
-            <td><a href="esquemas/1722/SETA-ALERTA-1722.pdf">SetAlert-1722</a></td>
-        </tr>
-        <tr>
-            <td>Tacógrafo</td>
-            <td><a href="esquemas/1519/TACOGRAFO-1519.pdf">Tacog-1519</a></td>
-            <td><a href="esquemas/1722/TACOGRAFO-1722.pdf">Tacog-1721</a></td>
-            <td><a href="esquemas/1722/TACOGRAFO-1722.pdf">Tacog-1722</a></td>
-        </tr>
+        <div class="table-container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><i class="bi bi-file-text"></i> Circuito</th>
+                        <th><i class="bi bi-diagram-3"></i> OF 1519</th>
+                        <th><i class="bi bi-diagram-3"></i> OF 1721</th>
+                        <th><i class="bi bi-diagram-3"></i> OF 1722</th>
+                        <th><i class="bi bi-book"></i> Apostilas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Diversos</strong></td>
+                        <td colspan="3" class="text-center"><span class="badge bg-warning text-dark">para todos</span>
+                        </td>
+                        <td><a href="apostilas/GUIA-DE-ELETRICA-MERCEDES.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                Guia de Elétrica</a></td>
+                    </tr>
+                    <tr>
+                        <td>ABS</td>
+                        <td><a href="esquemas/1519/ABS-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a></td>
+                        <td><a href="esquemas/1721/ABS-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a></td>
+                        <td><a href="esquemas/1722/ABS-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Altern. / Arranque</td>
+                        <td><a href="esquemas/1519/ALTERN-ARRANQ-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/ALT-ARR-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/ALT-ARR-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Buzina</td>
+                        <td><a href="esquemas/1519/BUZINA-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a>
+                        </td>
+                        <td><a href="esquemas/1721/BUZINA-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/BUZINA-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Farol</td>
+                        <td><a href="esquemas/1519/FAROIS-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a>
+                        </td>
+                        <td><a href="esquemas/1721/FAROIS-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/FAROL-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>FR / CPC</td>
+                        <td><a href="esquemas/1519/FR-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a></td>
+                        <td><a href="esquemas/1721/FR-CPC-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/FR-CPC-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Ignição / Partida</td>
+                        <td><a href="esquemas/1519/IGNIÇÃO-PARTIDA-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/IGN-PARTIDA-1721.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/IGN-PARTIDA-1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Limpador</td>
+                        <td><a href="esquemas/1519/LIMPADOR-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a>
+                        </td>
+                        <td><a href="esquemas/1721/LIMPADOR-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/LIMPADOR-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Linha CAN</td>
+                        <td><a href="esquemas/1519/LINHA-CAN-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/CAN-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a></td>
+                        <td><a href="esquemas/1722/CAN-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Luz de Ré</td>
+                        <td><a href="esquemas/1519/LUZ-DE- RE-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/LUZ-DE-RE-1721.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/LUZ-DE-RE_1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Luz de Freio</td>
+                        <td><a href="esquemas/1519/LUZ-DE-FREIO-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/LUZ-FREIO-1721.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/FREIO-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Luz de Posição</td>
+                        <td><a href="esquemas/1519/LUZ-DE-POSICAO-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/LUZ-POSIÇÃO-1721.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/LUZ-POSIÇÃO-1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>MR</td>
+                        <td><a href="esquemas/1519/MR-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a></td>
+                        <td><a href="esquemas/1721/MR-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a></td>
+                        <td><a href="esquemas/1722/MR-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Painel</td>
+                        <td><a href="esquemas/1519/PAINEL-1519.pdf" target="_blank"><i class="bi bi-pdf"></i> 1519</a>
+                        </td>
+                        <td><a href="esquemas/1721/PAINEL-1721.pdf" target="_blank"><i class="bi bi-pdf"></i> 1721</a>
+                        </td>
+                        <td><a href="esquemas/1722/PAINEL-1722.pdf" target="_blank"><i class="bi bi-pdf"></i> 1722</a>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Seta / Alerta</td>
+                        <td><a href="esquemas/1519/SETA-ALERTA-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1721/SETA-ALERTA-1721.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/SETA-ALERTA-1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1722</a></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Tacógrafo</td>
+                        <td><a href="esquemas/1519/TACOGRAFO-1519.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1519</a></td>
+                        <td><a href="esquemas/1722/TACOGRAFO-1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1721</a></td>
+                        <td><a href="esquemas/1722/TACOGRAFO-1722.pdf" target="_blank"><i class="bi bi-pdf"></i>
+                                1722</a></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-    </table>
+    <!-- Footer -->
     <footer>
-        <p> powered By TecVander</p>
-    </footer> 
-    
+        <div class="container-lg">
+            <p><i class="bi bi-rocket-takeoff"></i> Powered by <strong>TecVander</strong></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

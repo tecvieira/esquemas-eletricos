@@ -1,128 +1,373 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thermo King esquemas</title>
-    <link rel="stylesheet" href="estilos/tking.css">
+    <title>Thermo King - Esquemas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .navbar {
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(13, 110, 253, 0.2));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+            transform: scale(1.08);
+        }
+
+        .navbar-brand-text {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        nav.navbar-nav a.nav-link {
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav.navbar-nav a.nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .page-title {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead {
+            background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
+            color: white;
+        }
+
+        .table thead th {
+            font-weight: 600;
+            border: none;
+            padding: 1rem;
+            vertical-align: middle;
+        }
+
+        .table tbody td {
+            vertical-align: middle;
+            padding: 1rem;
+            border-color: #e9ecef;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f0f4ff;
+        }
+
+        .table a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .table a:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 71, 161, 0.1) 100%);
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .container-fluid-app {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title,
+        .table-container {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <nav>
-            <!-- <h1>TecVander</h1> -->
-            <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander">
-            <ul>
-                <li><a href="index.html">Voltar</a></li>
-                <li><a href="sair.html">Sair</a></li>
-                <li><a href="index.html">Iníciar</a></li>
-            </ul>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo-tecvandeRec.png" alt="logo tecvander" class="img-fluid">
+                    <span class="navbar-brand-text d-none d-md-inline">TecVander</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-house"></i> Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sair.html">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-    </div>
-    <main>
-        <table>
-            <tr id="cabecalho">
-                <td>Thermo King - Modelos</td>
-                <td>Dowloads</td>
-            </tr>
-            <tr>
-                <td>Diagrama LRT-SL</td>
-                <td><a href="esquemas/thermoking/LRT SL M2.pdf" target="_blank">LRT SL-II</a></td>
-            </tr>
-            <tr>
-                <td>Diagrama LRT-SP</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/diagrama-eletrico-LRT-SP.pdf" target="_blank">Esquema elétrico</a></td>
-            </tr>
-            <tr>
-                <td>Evaporador Colorido</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/TKing-color-evaporador-LRT-SP.pdf" target="_blank">Diagrama Simplificado</a></td>
-            </tr>
-            <tr>
-                <td>Condensador Colorido</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/Tking-color-condensador-LRT-SP.pdf" target="_blank">Diagrama Simplificado</a></td>
-            </tr>
-            <tr>
-                <td>Placa comando LRT-SP</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-placa-de-comando-lrt-sp.pdf" target="_blank">Fusíveis e Relês</a></td>
-            </tr>
-            <tr>
-                <td>Fiação Motores LRT-SP</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-motores-lrt-sp.pdf" target="_blank">Esquemas dos Motores</a></td>
-            </tr>
-            <tr>
-                <td>Cabeamento LRT-SP</td>
-                <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-fiação-lrt-sp.pdf" target="_blank">Chicote Elétrico</a></td>
-            </tr>
-            <tr id="cabecalho">
-                <td>SPHEROS - Modelos</td>
-                <td>Dowloads</td>
-            </tr>
-            <tr>
-                <td>Spheros CC 355</td>
-                <td><a href="esquemas/thermoking/manual-cc355-spheros.pdf" target="_blank">Manual</a></td>
-            </tr>
-            <tr>
-                <td>Spheros Péças CC230/300/350</td>
-                <td><a href="esquemas/thermoking/spheros/Spheros-CC230-300-350.pdf" target="_blank">Catálogo</a></td>
-            </tr>
-            <tr>
-                <td>Spheros CC336 - CC356</td>
-                <td><a href="esquemas/thermoking/spheros/CC 336 - CC 356 PT.pdf" target="_blank">Manual</a></td>
-            </tr>
-            <tr id="cabecalho">
-                <td>DENSO - Modelos</td>
-                <td>Dowloads</td>
-            </tr>
-            <tr>
-                <td>Denso LD8i</td>
-                <td><a href="esquemas/thermoking/denso/denso_ LD8i.pdf" target="_blank">Especificações</a></td>
-            </tr>
-            <tr>
-                <td>Diagrama LD8i</td>
-                <td><a href="esquemas/thermoking/denso/Diagramas Equipamentos.pdf" target="_blank">Elétrico</a></td>
-            </tr>
-            <tr>
-                <td>Manual controlador</td>
-                <td><a href="esquemas/thermoking/denso/Manual do Controlador P1HDE002.pdf" target="_blank">Diversos</a></td>
+    </header>
 
-            </tr>
-            <tr>
-                <td>Manual Usuário</td>
-                <td><a href="esquemas/thermoking/denso/denso-36-users-manual-511841.pdf" target="_blank">Operação</a></td>
-            </tr>
-            <tr>
-                <td>Código de Falhas</td>
-                <td><a href="esquemas/thermoking/denso/Denso_Falhas_LD8i.pdf" target="_blank">Manutenção</a></td>
-            </tr>
-            <tr id="cabecalho">
-                <td>VALEO - Inform. Técnica</td>
-                <td>Dowloads</td>
-            </tr>
-            <tr>
-                <td>Controlador SCB4XX</td>
-                <td><a href="esquemas/thermoking/valeo/Controlador_SCB_400-410_REV_08_PORT FALHA F15.pdf" target="_blank">Manual do controle</a></td>
-            </tr>
-            <tr>
-                <td>Compressor VALEO</td>
-                <td><a href="esquemas/thermoking/valeo/Manual compressor TM65 Valeo.pdf">Manual TM65</a></td>
-            </tr>
-            <tr>
-                <td>Saca Polia TM65</td>
-                <td><a href="esquemas/thermoking/valeo/001-02806-000 Ferramentas para sacar o conjunto de embreagem compressor TM65 Valeo.pdf" target="_blank">Ferramenta</a></td>
-            </tr>
-            <tr>
-                <td>Esquema Elétrico da Placa</td>
-                <td><a href="esquemas/thermoking/valeo/001-02806-000 Ferramentas para sacar o conjunto de embreagem compressor TM65 Valeo.pdf" target="_blank">Esquema</a></td>
-            </tr>
-            <tr>
-                <td>Controlador VALEO</td>
-                <td><a href="esquemas/thermoking/Controlador_SCB_400-410_REV_08_valeo.pdf" target="_blank">Manual SCB400/410</a></td>
-            </tr>
+    <!-- Main Content -->
+    <main class="container-fluid-app">
+        <div class="page-title">
+            <h1><i class="bi bi-snow"></i> Thermo King - Esquemas Elétricos</h1>
+        </div>
 
-        </table>
+        <div class="table-container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><i class="bi bi-box-seam"></i> Modelos</th>
+                        <th><i class="bi bi-cloud-download"></i> Downloads</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="section-header">
+                        <td colspan="2"><strong>Thermo King - Modelos</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Diagrama LRT-SL</td>
+                        <td><a href="esquemas/thermoking/LRT SL M2.pdf" target="_blank">LRT SL-II</a></td>
+                    </tr>
+                    <tr>
+                        <td>Diagrama LRT-SP</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/diagrama-eletrico-LRT-SP.pdf"
+                                target="_blank">Esquema elétrico</a></td>
+                    </tr>
+                    <tr>
+                        <td>Evaporador Colorido</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/TKing-color-evaporador-LRT-SP.pdf"
+                                target="_blank">Diagrama Simplificado</a></td>
+                    </tr>
+                    <tr>
+                        <td>Condensador Colorido</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/Tking-color-condensador-LRT-SP.pdf"
+                                target="_blank">Diagrama Simplificado</a></td>
+                    </tr>
+                    <tr>
+                        <td>Placa comando LRT-SP</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-placa-de-comando-lrt-sp.pdf"
+                                target="_blank">Fusíveis e Relês</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fiação Motores LRT-SP</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-motores-lrt-sp.pdf" target="_blank">Esquemas
+                                dos Motores</a></td>
+                    </tr>
+                    <tr>
+                        <td>Cabeamento LRT-SP</td>
+                        <td><a href="esquemas/thermoking/lrt-sp em pdf/doc-fiação-lrt-sp.pdf" target="_blank">Chicote
+                                Elétrico</a></td>
+                    </tr>
+                    <tr class="section-header">
+                        <td colspan="2"><strong>SPHEROS - Modelos</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Spheros CC 355</td>
+                        <td><a href="esquemas/thermoking/manual-cc355-spheros.pdf" target="_blank">Manual</a></td>
+                    </tr>
+                    <tr>
+                        <td>Spheros Péças CC230/300/350</td>
+                        <td><a href="esquemas/thermoking/spheros/Spheros-CC230-300-350.pdf" target="_blank">Catálogo</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spheros CC336 - CC356</td>
+                        <td><a href="esquemas/thermoking/spheros/CC 336 - CC 356 PT.pdf" target="_blank">Manual</a></td>
+                    </tr>
+                    <tr class="section-header">
+                        <td colspan="2"><strong>DENSO - Modelos</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Denso LD8i</td>
+                        <td><a href="esquemas/thermoking/denso/denso_ LD8i.pdf" target="_blank">Especificações</a></td>
+                    </tr>
+                    <tr>
+                        <td>Diagrama LD8i</td>
+                        <td><a href="esquemas/thermoking/denso/Diagramas Equipamentos.pdf" target="_blank">Elétrico</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Manual controlador</td>
+                        <td><a href="esquemas/thermoking/denso/Manual do Controlador P1HDE002.pdf"
+                                target="_blank">Diversos</a></td>
+
+                    </tr>
+                    <tr>
+                        <td>Manual Usuário</td>
+                        <td><a href="esquemas/thermoking/denso/denso-36-users-manual-511841.pdf"
+                                target="_blank">Operação</a></td>
+                    </tr>
+                    <tr>
+                        <td>Código de Falhas</td>
+                        <td><a href="esquemas/thermoking/denso/Denso_Falhas_LD8i.pdf" target="_blank">Manutenção</a>
+                        </td>
+                    </tr>
+                    <tr class="section-header">
+                        <td colspan="2"><strong>VALEO - Informações Técnicas</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Controlador SCB4XX</td>
+                        <td><a href="esquemas/thermoking/valeo/Controlador_SCB_400-410_REV_08_PORT FALHA F15.pdf"
+                                target="_blank">Manual do controle</a></td>
+                    </tr>
+                    <tr>
+                        <td>Compressor VALEO</td>
+                        <td><a href="esquemas/thermoking/valeo/Manual compressor TM65 Valeo.pdf">Manual TM65</a></td>
+                    </tr>
+                    <tr>
+                        <td>Saca Polia TM65</td>
+                        <td><a href="esquemas/thermoking/valeo/001-02806-000 Ferramentas para sacar o conjunto de embreagem compressor TM65 Valeo.pdf"
+                                target="_blank">Ferramenta</a></td>
+                    </tr>
+                    <tr>
+                        <td>Esquema Elétrico da Placa</td>
+                        <td><a href="esquemas/thermoking/valeo/001-02806-000 Ferramentas para sacar o conjunto de embreagem compressor TM65 Valeo.pdf"
+                                target="_blank">Esquema</a></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>Controlador VALEO</td>
+                        <td><a href="esquemas/thermoking/Controlador_SCB_400-410_REV_08_valeo.pdf"
+                                target="_blank">Manual SCB400/410</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p> powered By TecVander</p>
-    </footer> 
-    
+        <div class="container-lg">
+            <p><i class="bi bi-rocket-takeoff"></i> Powered by <strong>TecVander</strong></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
