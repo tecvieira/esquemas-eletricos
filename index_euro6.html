@@ -10,10 +10,22 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         :root {
             --primary-color: #0d6efd;
             --secondary-color: #6c757d;
             --success-color: #198754;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -31,6 +43,8 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -63,6 +77,17 @@
             transform: scale(1.08);
         }
 
+        @media (max-width: 768px) {
+            .navbar-brand {
+                gap: 8px;
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                max-height: 40px;
+            }
+        }
+
         .navbar-brand-text {
             background: linear-gradient(135deg, #0d6efd 0%, #0d47a1 100%);
             -webkit-background-clip: text;
@@ -82,7 +107,15 @@
 
         main {
             flex: 1;
-            padding: 2rem 0;
+            padding: 1rem 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 0.75rem 0;
+            }
         }
 
         .page-title {
@@ -91,12 +124,43 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         }
 
         .page-title h1 {
             color: var(--primary-color);
             font-weight: 700;
             margin: 0 0 1rem 0;
+            font-size: 1.75rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title h1 {
+                font-size: 1.25rem;
+            }
         }
 
         .page-title p {
@@ -104,6 +168,20 @@
             font-size: 1.05rem;
             line-height: 1.8;
             margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .page-title p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title p {
+                font-size: 0.95rem;
+            }
         }
 
         .content-section {
@@ -112,6 +190,22 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         }
 
         .content-section h2 {
@@ -120,6 +214,23 @@
             margin: 1.5rem 0 1rem 0;
             border-bottom: 3px solid rgba(13, 110, 253, 0.2);
             padding-bottom: 0.75rem;
+            font-size: 1.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .content-section h2 {
+                font-size: 1.25rem;
+                margin: 1.25rem 0 0.75rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-section h2 {
+                font-size: 1.1rem;
+                margin: 1rem 0 0.5rem 0;
+            }
         }
 
         .content-section h2:first-child {
@@ -148,14 +259,24 @@
         }
 
         .content-section img {
-            max-width: 100%;
+            max-width: 85%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
+            margin: 1.5rem auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .content-section img {
+                max-width: 100%;
+                margin: 1rem auto;
+            }
+        }
+
+        .text-center img {
+            max-width: 100% !important;
+            width: auto;
         }
 
         .architectural-group {
@@ -164,6 +285,22 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 8px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .architectural-group {
+                padding: 1.25rem;
+                margin: 1.25rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .architectural-group {
+                padding: 1rem;
+                margin: 1rem 0;
+                border-left-width: 3px;
+            }
         }
 
         .architectural-group strong {
@@ -180,13 +317,17 @@
         footer {
             background: linear-gradient(135deg, #1e3a8a 0%, #0d47a1 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             margin-top: 2rem;
             text-align: center;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         footer p {
             margin: 0.5rem 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         footer a {
@@ -200,10 +341,33 @@
             color: #fff;
         }
 
+        @media (max-width: 768px) {
+            footer {
+                padding: 1.5rem 1rem;
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            footer {
+                padding: 1rem 0.75rem;
+                margin-top: 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
         .container-fluid-app {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 576px) {
+            .container-fluid-app {
+                padding: 0 0.75rem;
+            }
         }
 
         @keyframes fadeIn {
@@ -317,7 +481,8 @@
 
             <div class="text-center">
                 <img src="imagens/componentes monitora gases600.jpg" alt="Sistema de tratamento dos gases"
-                    class="img-zoomable" data-full="imagens/componentes monitora gases600.jpg" style="max-width: 400px;">
+                    class="img-zoomable" data-full="imagens/componentes monitora gases600.jpg"
+                    style="max-width: 400px;">
             </div>
 
             <p>A necessidade da regeneração surge da função principal do DPF: reter o material particulado (fuligem)
